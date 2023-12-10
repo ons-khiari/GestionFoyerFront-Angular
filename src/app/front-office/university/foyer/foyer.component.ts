@@ -24,5 +24,12 @@ export class FoyerComponent implements OnInit {
       this.foyers = result;
     });
   }
-
+  getBlocLink(foyer: Foyer): any[] {
+    // Save the selected university
+    this.FoyerService.setSelectedFoyer(foyer);
+  
+    // Return the router link
+    return ['bloc'];
+  }
+  
 }

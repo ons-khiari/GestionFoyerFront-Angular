@@ -4,12 +4,14 @@ import { UniversityCartComponent } from './university-cart/university-cart.compo
 import { FoyerComponent } from './foyer/foyer.component';
 import { BlocComponent } from './bloc/bloc.component';
 import { ChambreComponent } from './chambre/chambre.component';
+import { AddReservationComponent } from './add-reservation/add-reservation.component';
 
 const routes: Routes = [
   { path: "", component: UniversityCartComponent },
   { path: "foyer/:param", component: FoyerComponent },
   { path: "foyer/:param/bloc", component: BlocComponent },
-  { path: "foyer/:param/bloc/:id/chambres", component: ChambreComponent }
+  { path: "foyer/:param/bloc/:id/chambres", component: ChambreComponent },
+  { path: "addreservation", component: AddReservationComponent }
 ];
 
 @NgModule({

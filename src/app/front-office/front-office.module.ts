@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UniversityCartComponent } from './university/university-cart/university-cart.component';
 import { ReservationModule } from '../back-office/reservation/reservation.module';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -22,17 +23,18 @@ import { ReservationModule } from '../back-office/reservation/reservation.module
     SlideComponent,
     FooterComponent,
     AccountComponent,
-    UniversityCartComponent
+    UniversityCartComponent,
+    ContactusComponent,
   ],
   imports: [
     CommonModule,
     FrontOfficeRoutingModule,
     BackOfficeRoutingModule,
-    UniversityModule,
     MatMenuModule,
     FormsModule,
     ReservationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ]
 })
 export class FrontOfficeModule { }

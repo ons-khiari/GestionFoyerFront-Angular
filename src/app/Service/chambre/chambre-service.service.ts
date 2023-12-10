@@ -7,7 +7,7 @@ import { Chambre } from 'src/app/models/Chambre';
   providedIn: 'root'
 })
 export class ChambreServiceService {
-
+  private selectedChambre: Chambre| null = null;
   constructor(private httpClient: HttpClient) { }
 
   getAllData(): Observable<Chambre[]> {
@@ -37,4 +37,12 @@ export class ChambreServiceService {
   getChambrewithbloc(id: any) {
     return this.httpClient.get('http://localhost:9090/chambre/bloc/' + id);
   }
+  setSelectedChambre(chambre: Chambre): void {
+    this.selectedChambre = chambre;
+  }
+  
+  getSelectedChambre(): Chambre | null {
+    return this.selectedChambre;
+  }
+  
 }

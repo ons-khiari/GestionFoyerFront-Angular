@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FoyerService {
+  private selectedFoyer: Foyer | null = null;
   URL="http://localhost:9090/foyer";
   httpOPtions={
     headers: new HttpHeaders({
@@ -39,4 +40,12 @@ export class FoyerService {
   getId(name: string){
     return this.http.get<number>(this.URL+'/getIdParNom/'+name);
   }
+  setSelectedFoyer(foyer: Foyer): void {
+    this.selectedFoyer = foyer;
+  }
+  
+  getSelectedFoyer(): Foyer | null {
+    return this.selectedFoyer;
+  }
+  
 }

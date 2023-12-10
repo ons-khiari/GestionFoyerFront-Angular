@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ChambreServiceService } from 'src/app/Service/chambre/chambre-service.service';
 import { Chambre } from 'src/app/models/Chambre';
 
@@ -14,7 +14,7 @@ export class ChambreComponent {
   constructor(
     private route: ActivatedRoute,
     private chambreService: ChambreServiceService,
-    
+    private router: Router,
   ) {}
   ngOnInit(): void {
     const Idbloc =+ this.route.snapshot.paramMap.get('id')!;
@@ -30,4 +30,13 @@ export class ChambreComponent {
         });
     }
 
+    navigateToAddReservation(chambre: Chambre) {
+      this.chambreService.setSelectedChambre(chambre);
+      this.router.navigate(['front/universities/addreservation']);
+    }
+
+  isLoggedIn(): boolean {
+    const userString = localStorage.getItem('user');
+    return !!userString;
+  }
 }

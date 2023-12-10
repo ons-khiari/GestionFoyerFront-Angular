@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UniversityService {
+  private selectedUniversity: University | null = null;
   URL="http://localhost:9090/universite";
   httpOPtions={
     headers: new HttpHeaders({
@@ -45,4 +46,11 @@ export class UniversityService {
     return this.http.get<University[]>(this.URL+'/getAllDispo');
   }
   
+  setSelectedUniversity(university: University): void {
+    this.selectedUniversity = university;
+  }
+
+  getSelectedUniversity(): University | null {
+    return this.selectedUniversity;
+  }
 }

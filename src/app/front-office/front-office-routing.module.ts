@@ -4,6 +4,7 @@ import { SlideComponent } from './slide/slide.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { FrontOfficeComponent } from './front-office.component';
 import { AccountComponent } from './account/account.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 
 const frontroot: Routes = [
@@ -20,7 +21,8 @@ const frontroot: Routes = [
         path: "reservations", loadChildren: () =>
           import('./reservations/reservations.module').then(m => m.ReservationsModule)
       },
-      { path: "account", component: AccountComponent }
+      { path: "account", component: AccountComponent },
+      { path: "contactus", component: ContactusComponent }
     ]
   }];
 

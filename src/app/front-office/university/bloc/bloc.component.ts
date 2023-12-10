@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlocService } from 'src/app/Service/bloc/bloc-service.service';
 import { Bloc } from 'src/app/models/Bloc';
+import { Chambre } from 'src/app/models/Chambre';
 
 @Component({
   selector: 'app-bloc',
@@ -24,5 +25,5 @@ export class BlocComponent {
         this.blocs = data;
       });
   }
-
+ 
 }

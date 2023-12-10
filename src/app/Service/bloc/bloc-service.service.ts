@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BlocService {
+  private selectedBloc:Bloc| null = null;
 
   constructor(private  httpClient:HttpClient) { }
 
@@ -37,4 +38,12 @@ export class BlocService {
   getBlocksByFoyer(id: any): Observable<string[]> {
     return this.httpClient.get<string[]>('http://localhost:9090/bloc/foyer/' + id);
   }
+  setSelectedBloc(bloc: Bloc): void {
+    this.selectedBloc = bloc;
+  }
+  
+  getSelectedBloc(): Bloc | null {
+    return this.selectedBloc;
+  }
+  
 }

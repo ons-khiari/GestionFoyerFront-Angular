@@ -30,7 +30,16 @@
         </div>
       
         
-        <button routerLink="reservations/addreservation" class="mt-4 text-xl w-full text-white bg-orange-600 py-2 rounded-xl shadow-lg">Reserver Chambre</button>
+        <button *ngIf="isLoggedIn(); else loginLink" (click)="navigateToAddReservation(chambre)"
+          class="mt-4 text-xl w-full text-white bg-orange-600 py-2 rounded-xl shadow-lg">
+          Reserver Chambre
+        </button>
+        
+        <ng-template #loginLink>
+          <button routerLink="/user/login" class="mt-4 text-xl w-full text-white bg-orange-600 py-2 rounded-xl shadow-lg">
+            Login to Reserve
+          </button>
+        </ng-template>
       </div>
     </div>
 
@@ -38,6 +47,5 @@
 </div>
 </div>
 </div>
-<!-- end product section -->
 </div>
 
